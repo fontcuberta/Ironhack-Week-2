@@ -53,6 +53,10 @@ class Phone < Device
     @agenda.contact_list
   end
 
+  def call_contact name
+    @agenda.contact_list.find { |contact| contact[:name] == name }
+  end
+
 end
 
 class SmartWatch < Device
