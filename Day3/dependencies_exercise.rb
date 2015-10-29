@@ -61,10 +61,6 @@ end
 
 class SmartWatch < Device
   include TakePhoto
-  
-  def initialize operative_system, inches
-    super(operative_system, inches)
-  end
 
   def print_current_time
     "***#{super}***"
