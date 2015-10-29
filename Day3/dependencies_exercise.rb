@@ -1,23 +1,19 @@
 require 'pry'
 
-module PrintCurrentTime
-  def print_current_time
-    Time.now
-  end
-end
-
-module TakePhoto
   def take_photo
     "Photo taken in Android"
   end
 end
 
 class Device
-  include PrintCurrentTime
 
   def initialize operative_system, inches
     @operative_system = operative_system
     @inches = inches
+  end
+
+  def print_current_time
+    Time.now
   end
 
 end
@@ -83,6 +79,10 @@ class Microwave
 
   def heat_food
     "Is heating!!!"
+  end
+
+  def print_current_time
+    Time.now
   end
 end
 
