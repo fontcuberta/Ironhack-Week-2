@@ -19,6 +19,10 @@ class ShoppingCart
     end
   end
 
+  def cost
+    @cart.reduce(0.0) { |total,item| total + item.cost }
+  end
+
 end
 
 
@@ -73,7 +77,6 @@ fruits = {
   watermelon: Watermelon
 }
 
-
 cart = ShoppingCart.new fruits
 
 cart.add_item_to_cart :apple
@@ -85,6 +88,4 @@ cart.add_item_to_cart :orange
 cart.add_item_to_cart :banana
 
 cart.show
-
-
-#cart.cost = 50
+puts cart.cost
