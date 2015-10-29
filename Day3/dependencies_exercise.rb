@@ -1,5 +1,6 @@
 require 'pry'
 
+module Camera
   def take_photo
     "Photo taken in Android"
   end
@@ -34,7 +35,7 @@ end
 
 class Phone < Device
 
-  include TakePhoto
+  include Camera
 
   def initialize operative_system, inches, agenda
     super(operative_system, inches)
@@ -56,7 +57,7 @@ class Phone < Device
 end
 
 class SmartWatch < Device
-  include TakePhoto
+  include Camera
 
   def print_current_time
     "***#{super}***"
@@ -75,7 +76,6 @@ end
 
 
 class Microwave
-  include PrintCurrentTime
 
   def heat_food
     "Is heating!!!"
